@@ -13,14 +13,12 @@ html { box-sizing: border-box;}
 * {
   margin: 0;
   padding: 0;
-  font-size: 20px;
+  font-size: 24px;
   font-family: 'Inconsolata', monospace;
 }
 
-.body {
-  background-image: url(./assets/5419678.jpg);
-  background-size: cover;
-  background-repeat: repeat;
+body {
+  background: url(./assets/80271.jpg) no-repeat center/cover;
 }
 
 .wrapper {
@@ -32,9 +30,14 @@ html { box-sizing: border-box;}
 .header {
   text-align: center;
   font-size: 55px;
+  font-weight: 900;
   margin: 0;
   padding: 80px 0;
+  background: -webkit-linear-gradient(45deg, #00bcdd 0%, #ff00ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
 
 .pictureContainer {
   max-width: 100%;
@@ -56,9 +59,9 @@ html { box-sizing: border-box;}
   text-align: center;
 }
 
-.body {
+/* .body {
   background: white;
-}
+} */
 
 .commentSection {
   height: 60vh;
@@ -206,4 +209,20 @@ input[type=text] {
 .link:focus {
   color: #00bcdd;
   border-bottom: #ff00ff;
+}
+
+@media(max-width: 1200px) {
+  .inputFlex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  input[type="text"] {
+    width: 100%;
+  }
+
+  .name, .title {
+    margin: 20px 0;
+  }
 }

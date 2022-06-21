@@ -54,10 +54,11 @@ const Form = () => {
     return (
         <section>
             <div className="wrapper flexContainer">
-                <form action="submit">
-                    <div>
+                <form action="submit" onSubmit={handleSubmit}>
+                    <div className="inputFlex">
                         <label htmlFor="name">What's Your Name?</label>
                         <input
+                            required
                             className="name"
                             type="text"
                             id="name"
@@ -66,6 +67,7 @@ const Form = () => {
                             value={userName} />
                         <label htmlFor="title">What's your post about?</label>
                         <input
+                            required
                             placeholder="We were the best band"
                             className="title"
                             type="text"
@@ -77,6 +79,7 @@ const Form = () => {
                     <div>
                         <label htmlFor="comment"></label>
                         <textarea
+                            required
                             placeholder="You are, my fire. The one, desire. Believe, when I say, I want it that way."
                             className="textarea"
                             name="comment" id="comment"
@@ -87,7 +90,8 @@ const Form = () => {
                         ></textarea>
                     </div>
                     <div className="buttonContainer">
-                        <button onClick={handleSubmit} className="button">Post</button>
+                        <button
+                            className="button">Post</button>
                     </div>
 
                 </form>
