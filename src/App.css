@@ -111,6 +111,7 @@ input {
   background-image: linear-gradient(45deg, #00bcdd 0%, #ff00ff 100%) 1;
   /* border-radius: 15px; */
   width: 100%;
+  /* margin: auto; */
 }
 
 input[type=text] {
