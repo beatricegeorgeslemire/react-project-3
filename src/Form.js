@@ -1,5 +1,6 @@
-import database from "./firebase";
-import { ref, push } from "firebase/database";
+
+import firebase from './firebase';
+import { ref, push, getDatabase } from "firebase/database";
 import { useState } from "react";
 
 
@@ -8,8 +9,6 @@ const Form = () => {
     const [userInput, setUserInput] = useState("");
     const [userName, setUserName] = useState("");
     const [userTitle, setUserTitle] = useState("");
-
-    console.log(userInput, userName, userTitle);
 
     const comment = {
         "input": userInput,
@@ -38,6 +37,7 @@ const Form = () => {
 
         //create a reference tot he database
         // const database = getDatabase(app);
+        const database = getDatabase(firebase);
         const dbRef = ref(database);
 
         //push the value of userInput state to the database
@@ -53,29 +53,46 @@ const Form = () => {
 
     return (
         <section>
-            <form action="submit">
-                <label htmlFor="name">What's Your Boyband name?</label>
-                <input
-                    type="text"
-                    id="name"
-                    onChange={handleNameChange}
-                    value={userName} />
-                <label htmlFor="title">What's your post about?</label>
-                <input
-                    type="text"
-                    id="title"
-                    onChange={handleTitleChange}
-                    value={userTitle} />
-                <label htmlFor="comment"></label>
-                <textarea
-                    name="comment" id="comment"
-                    cols="30"
-                    rows="10"
-                    onChange={handleInputChange}
-                    value={userInput}
-                ></textarea>
-                <button onClick={handleSubmit}>Post</button>
-            </form>
+            <div className="wrapper flexContainer">
+                <form action="submit">
+                    <div>
+                        <label htmlFor="name">What's Your Name?</label>
+                        <input
+                            className="name"
+                            type="text"
+                            id="name"
+                            placeholder="Nick Carter"
+                            onChange={handleNameChange}
+                            value={userName} />
+                        <label htmlFor="title">What's your post about?</label>
+                        <input
+                            placeholder="We were the best band"
+                            className="title"
+                            type="text"
+                            id="title"
+                            onChange={handleTitleChange}
+                            value={userTitle} />
+                    </div>
+
+                    <div>
+                        <label htmlFor="comment"></label>
+                        <textarea
+                            placeholder="You are, my fire. The one, desire. Believe, when I say, I want it that way."
+                            className="textarea"
+                            name="comment" id="comment"
+                            cols="100"
+                            rows="10"
+                            onChange={handleInputChange}
+                            value={userInput}
+                        ></textarea>
+                    </div>
+                    <div className="buttonContainer">
+                        <button onClick={handleSubmit} className="button">Post</button>
+                    </div>
+
+                </form>
+            </div>
+
         </section>
 
     )

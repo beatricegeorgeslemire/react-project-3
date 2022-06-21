@@ -36,12 +36,10 @@ function App() {
           }
         );
       }
-      console.log(newState);
       //update state to match our database values
       setMessage(newState);
     });
   }, []);
-  console.log(message);
 
   return (
     <body className='body'>
