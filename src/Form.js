@@ -2,6 +2,7 @@
 import firebase from './firebase';
 import { ref, push, getDatabase } from "firebase/database";
 import { useState } from "react";
+import Britney from './Britney';
 
 
 const Form = () => {
@@ -9,6 +10,7 @@ const Form = () => {
     const [userInput, setUserInput] = useState("");
     const [userName, setUserName] = useState("");
     const [userTitle, setUserTitle] = useState("");
+    const [isHovered, setIsHovered] = useState(false);
 
     const comment = {
         "input": userInput,
@@ -49,53 +51,68 @@ const Form = () => {
         setUserTitle('');
     }
 
+    //handlers to add to the "post" button to make britney appear
+    const handleMouseOn = () => {
+        setIsHovered(true);
+    }
+
+    const handleMouseOff = () => {
+        setIsHovered(false);
+    }
 
 
     return (
         <section>
-            <div className="wrapper flexContainer">
-                <form action="submit" onSubmit={handleSubmit}>
-                    <div className="inputFlex">
-                        <label htmlFor="name">What's Your Name?</label>
-                        <input
-                            required
-                            className="name"
-                            type="text"
-                            id="name"
-                            placeholder="Nick Carter"
-                            onChange={handleNameChange}
-                            value={userName} />
-                        <label htmlFor="title">What's your post about?</label>
-                        <input
-                            required
-                            placeholder="We were the best band"
-                            className="title"
-                            type="text"
-                            id="title"
-                            onChange={handleTitleChange}
-                            value={userTitle} />
-                    </div>
+            <div>
+                <div className="wrapper flexContainer">
+                    <form action="submit" onSubmit={handleSubmit}>
+                        <div className="inputFlex">
+                            <label htmlFor="name">What's Your Name?</label>
+                            <input
+                                required
+                                className="name"
+                                type="text"
+                                id="name"
+                                placeholder="Nick Carter"
+                                onChange={handleNameChange}
+                                value={userName} />
+                            <label htmlFor="title">What's your post about?</label>
+                            <input
+                                required
+                                placeholder="We were the best band"
+                                className="title"
+                                type="text"
+                                id="title"
+                                onChange={handleTitleChange}
+                                value={userTitle} />
+                        </div>
 
-                    <div>
-                        <label htmlFor="comment"></label>
-                        <textarea
-                            required
-                            placeholder="You are, my fire. The one, desire. Believe, when I say, I want it that way."
-                            className="textarea"
-                            name="comment" id="comment"
-                            cols="100"
-                            rows="10"
-                            onChange={handleInputChange}
-                            value={userInput}
-                        ></textarea>
-                    </div>
-                    <div className="buttonContainer">
-                        <button
-                            className="button">Post</button>
-                    </div>
+                        <div>
+                            <label htmlFor="comment"></label>
+                            <textarea
+                                required
+                                placeholder="You are, my fire. The one, desire. Believe, when I say, I want it that way."
+                                className="textarea"
+                                name="comment" id="comment"
+                                cols="100"
+                                rows="10"
+                                onChange={handleInputChange}
+                                value={userInput}
+                            ></textarea>
+                        </div>
+                        <div className="buttonContainer">
+                            <button
+                                className="button"
+                                onMouseEnter={handleMouseOn}
+                                onMouseLeave={handleMouseOff}
+                            >Post</button>
+                        </div>
 
-                </form>
+                    </form>
+                </div>
+                <Britney isHovered={isHovered} />
             </div>
+
 
         </section>
 

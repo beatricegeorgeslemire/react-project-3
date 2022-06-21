@@ -11,6 +11,7 @@ function App() {
 
   const [message, setMessage] = useState([]);
 
+
   //ON PAGELOAD (initial render/ component mount)
   useEffect(() => {
     // console.log('intialized this dope app');
@@ -40,6 +41,7 @@ function App() {
       setMessage(newState);
     });
   }, []);
+
 
   return (
     <body className='body'>
