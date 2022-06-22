@@ -37,8 +37,7 @@ const Form = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        //create a reference tot he database
-        // const database = getDatabase(app);
+        //create a reference to the database
         const database = getDatabase(firebase);
         const dbRef = ref(database);
 
