@@ -321,3 +321,14 @@ input[type=text] {
     margin: 20px 0;
   }
 }
+
+@media(max-width: 480px){
+  .pictureContainer img {
+    width: 250px;
+  }
+
+  .showBubble img {
+    display: none;
+  }
+
+}
