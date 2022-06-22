@@ -1,8 +1,6 @@
 const CommentSection = (props) => {
 
-    const {
-        messageProps
-    } = props;
+    const { messageProps } = props;
 
 
     return (
