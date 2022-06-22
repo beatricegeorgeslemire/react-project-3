@@ -31,8 +31,9 @@ body {
   text-align: center;
   font-size: 55px;
   font-weight: 900;
+  text-transform: uppercase;
   margin: 0;
-  padding: 80px 0;
+  padding: 80px 0 50px;
   background: -webkit-linear-gradient(45deg, #00bcdd 0%, #ff00ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -46,7 +47,7 @@ body {
 }
 
 .pictureContainer img {
-  width: 300px;
+  width: 380px;
   display: block;
   border-radius: 50%;
   border: 8px solid #00bcdd;
@@ -64,7 +65,7 @@ body {
 } */
 
 .commentSection {
-  height: 60vh;
+  height: 80vh;
   overflow: auto;
   display: flex;
   flex-direction: column-reverse;

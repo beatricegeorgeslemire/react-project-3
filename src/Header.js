@@ -9,7 +9,7 @@ const Header = () => {
             <div className="pictureContainer">
                 <img src={image} alt="pictire of the backstreet boys looking sharp" />
             </div>
-            <h2 className="topic">What's your best memory of the 90's?</h2>
+            <h2 className="topic">What's your fondest memory of the 90's?</h2>
         </div>
 
     )

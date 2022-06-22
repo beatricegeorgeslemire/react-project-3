@@ -112,8 +112,6 @@ const Form = () => {
                 </div>
                 <Britney isHovered={isHovered} />
             </div>
-
-
         </section>
 
     )
